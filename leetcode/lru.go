@@ -34,7 +34,7 @@ type Len interface {
 func (c *cache) Remove() {
 	c.mutex.Lock()
 	defer c.mutex.Unlock()
-	e := c.l.Back()
+	e := c.l.Front()
 
 	if e != nil {
 		v := e.Value.(*entry)
@@ -80,4 +80,15 @@ func (c *cache) Add(key string, value Len) {
 	for c.maxLen != 0 && c.current > c.maxLen {
 		c.Remove()
 	}
+}
+
+func (c *cache) Front() Len {
+	e := c.l.Front()
+	if e != nil {
+		v := e.Value.(*entry)
+
+		return v.value
+	}
+
+	return nil
 }
