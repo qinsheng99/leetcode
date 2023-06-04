@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 func reverse7(x int) int {
 	tmp := 0
 	for x != 0 {
@@ -12,8 +10,4 @@ func reverse7(x int) int {
 		return 0
 	}
 	return tmp
-}
-
-func main() {
-	fmt.Println(reverse7(321))
 }

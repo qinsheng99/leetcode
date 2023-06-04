@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 func lengthOfLongestSubstring(s string) int {
 	if len(s) == 0 {
 		return 0
@@ -26,8 +24,4 @@ func max(a, b int) int {
 		return a
 	}
 	return b
-}
-
-func main() {
-	fmt.Println(lengthOfLongestSubstring("abcadf"))
 }
