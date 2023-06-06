@@ -1,4 +1,4 @@
-package main
+package algorithm
 
 import (
 	"testing"
@@ -22,4 +22,16 @@ func TestLRU(t *testing.T) {
 		t.Log(f.(cacheSlice))
 	}
 
+}
+
+func TestLFU(t *testing.T) {
+	c := newLFU(2)
+
+	c.put(1, 2)
+	c.put(3, 4)
+	t.Log(c.get(1))
+
+	c.put(5, 6)
+
+	t.Log(c.get(3))
 }
