@@ -31,3 +31,11 @@ func TestBubbleSort(t *testing.T) {
 
 	t.Log(arr)
 }
+
+func TestInsertSort(t *testing.T) {
+	var arr = []int{3, 1, 15, 12, 9, 6, 10}
+
+	insertSort(arr)
+
+	t.Log(arr)
+}
